@@ -1,0 +1,57 @@
+import rodados.*
+import dependencias.*
+
+describe "Test de Dependencias"{
+	const deportes =new Dependencia(cantDeEmpl = 45)
+	const cultura =new Dependencia(cantDeEmpl = 31)
+	
+	
+	method initialize(){
+		const cachito =new Corsa(color ="rojo")
+		deportes.agregarAFlota(cachito)
+		deportes.agregarAFlota(new Corsa(color="azul"))
+		deportes.agregarAFlota(new Corsa(color="verde"))
+		deportes.agregarAFlota(new Kwid(conTanqueAdicional = true))
+		deportes.agregarAFlota(new AutoEspecial (capacidad = 5, velocidad = 160, peso =1200, color ="beige"))
+		cultura.agregarAFlota(cachito)
+		cultura.agregarAFlota(new Kwid(conTanqueAdicional = true))
+		cultura.agregarAFlota(new Kwid(conTanqueAdicional = true))
+		cultura.agregarAFlota(new Kwid())
+		traffic.configurar(interiorPopular,motorBataton)
+		cultura.agregarAFlota(traffic)
+	}
+	
+	test "Peso Total de la flota de deporte"{
+		assert.equals(1300*3 + 1350 + 1200, deportes.pesoTotalFlota())
+		
+	}
+	
+	test "Peso Total de la flota de cultura"{
+		assert.equals(1300 + 1350*2 + 5500 + 1200, cultura.pesoTotalFlota())
+	}
+	
+	test "Estan bien equipados en deporte"{
+		assert.that(deportes.estaEquilibrada())
+	}
+	
+	test " No estan bien equipados en cultura"{
+		assert.notThat(cultura.estaEquilibrada())
+	}
+	
+	test "Capacidad total en color azul en cultura"{
+		assert.equals(10, cultura.capacidadTotalEnColor("azul"))
+	}
+	
+	test "El color del rodado mas rapido"{
+		assert.equals(,cultura.colorDeRodadoMasRapido())
+	}
+	
+	test "Es grande cultura"{
+		assert.that(cultura.esGrande())
+	}
+	
+	test "Capacidad faltante"{
+		
+	}
+}
+

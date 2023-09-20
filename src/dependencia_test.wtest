@@ -1,0 +1,20 @@
+import rodados.*
+describe "cultura" {
+	
+	test "Tiene "{
+		var cachito = new Corsa(color = "rojo")
+		var kwidconTanque = new Kwid (conTanqueAdicional = true)
+	}
+}
+
+describe "deportes"{
+	var cachito = new Corsa(color = "Azul")
+	var corsaVerde = new Corsa(color = "Verde")
+	var corsaAzul = new Corsa(color = "Azul")
+	var kwidconTanque = new Kwid (conTanqueAdicional = true)
+	var kwidconTanque = new Kwid (conTanqueAdicional = true)
+	var autoEspecial = new AutosEspeciales (capacidad = 5, velocidad = 160, peso =1200, color ="beige")
+	
+	
+	
+}
